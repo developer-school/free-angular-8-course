@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+html,
+body,
+main {
+  font-size: 18px;
+  font-family: 'Open Sans';
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  background: #2f3542;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #ffa502;
+}
