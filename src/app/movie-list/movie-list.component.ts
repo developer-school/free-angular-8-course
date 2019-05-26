@@ -18,7 +18,7 @@ export class MovieListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.movies$ = this.movieService.getMovies();
+    this.movies$ = this.movieService.getMovieFromHttp();
     this.navbarService.title.next('MovieNight');
   }
 }

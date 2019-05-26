@@ -1,5 +1,5 @@
 img {
-  max-width: 400px;
+  max-width: 300px;
 
   @media (max-width: 640px) {
     max-width: 200px;
@@ -7,6 +7,7 @@ img {
 }
 
 div {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
