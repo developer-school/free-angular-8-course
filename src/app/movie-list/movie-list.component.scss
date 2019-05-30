@@ -1,5 +1,7 @@
 img {
   max-width: 200px;
+  height: 400px;
+  object-fit: cover;
 }
 
 ul {
@@ -11,6 +13,6 @@ ul {
 }
 
 li {
-  margin: 0px 10px;
+  margin: 10px 10px;
   width: 200px;
 }

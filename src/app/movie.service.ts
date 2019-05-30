@@ -1,13 +1,14 @@
-import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { movies, Movie } from './models/movie.model';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
+import { Movie, movies } from './models/movie.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MovieService {
-  private ROOT_URL = "http://localhost:3000/movies"
+  private ROOT_URL = 'http://localhost:3000/movies';
 
   constructor(private http: HttpClient) {}
 
@@ -15,8 +16,8 @@ export class MovieService {
     return of(movies);
   }
 
-  getMovieFromHttp() {
-    return this.http.get<Movie[]>(this.ROOT_URL)
+  getMoviesFromHttp() {
+    return this.http.get<Movie[]>(this.ROOT_URL).pipe(this.addDelay);
   }
 
   movie(id: number) {
@@ -26,5 +27,13 @@ export class MovieService {
 
   movieFromHttp(id: number) {
     return this.http.get<Movie>(`${this.ROOT_URL}/${id}`);
+  }
+
+  addMovie(movie: Movie) {
+    return this.http.post(this.ROOT_URL, movie);
+  }
+
+  addDelay(obs: Observable<any>) {
+    return obs.pipe(delay(1000));
   }
 }
